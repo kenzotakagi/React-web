@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import PropTypes from 'prop-types';
+
+const Hello = (props) => {
+  return <div>こんにちは、{props.name}さん</div>;
+};
+
+Hello.propTypes = {
+  name: PropTypes.string
+};
 
 const Profile = (props) => {
   return (
