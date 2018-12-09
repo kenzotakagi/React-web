@@ -4,20 +4,19 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const Hello = () => {
+const Hello = (props) => {
   return (
     <React.Fragment>
-      <div>こんにちは、坂本龍馬さん</div>
-      <div>こんにちは、坂本龍馬さん</div>
+      <div>こんにちは、{props.name}さん</div>
     </React.Fragment>
   );
 };
 
-const helloElement = <Hello />;
-
 ReactDOM.render(
   <div>
-    {helloElement}
+    <Hello name="坂本龍馬" />
+    <Hello name="西郷隆盛" />
+    <Hello name="勝海舟" />
   </div>,
   document.getElementById("root")
 );
