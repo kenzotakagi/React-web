@@ -12,6 +12,10 @@ Hello.propTypes = {
   name: PropTypes.string
 };
 
+Hello.defaultProps = {
+  name: '坂本龍馬'
+};
+
 const Profile = (props) => {
   return (
     <ul>
