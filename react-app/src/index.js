@@ -12,9 +12,14 @@ const Profile = (props) => {
     </ul>
   )
 }
+
+const profile = {
+  name: '坂本龍馬',
+  birthDay: '1836/01/03',
+};
   
 ReactDOM.render(
-  <Profile name='坂本龍馬' birthDay='1836/01/03' />,
+  <Profile {...profile} />,
   document.getElementById("root")
 );
 
