@@ -8,11 +8,11 @@ const Hello = () => {
   return <div>こんにちは、坂本龍馬さん</div>;
 };
 
+const helloElement = <Hello />;
+
 ReactDOM.render(
   <div>
-    <Hello />
-    <Hello />
-    <Hello />
+    {helloElement}
   </div>,
   document.getElementById("root")
 );
