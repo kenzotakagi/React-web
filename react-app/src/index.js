@@ -7,17 +7,25 @@ import * as serviceWorker from './serviceWorker';
 const Hello = (props) => {
   return (
     <React.Fragment>
-      <div>こんにちは、{props.name}さん</div>
+      <div>こんにちは、{props.children}さん</div>
     </React.Fragment>
   );
 };
 
+const Greeting = (props) => {
+  return (
+    <div>
+      <div>ご挨拶</div>
+      { props.children }
+    </div>
+  )
+}
+
 ReactDOM.render(
-  <div>
-    <Hello name="坂本龍馬" />
-    <Hello name="西郷隆盛" />
-    <Hello name="勝海舟" />
-  </div>,
+  <Greeting>
+    <Hello>坂本龍馬</Hello>
+    <Hello>西郷隆盛</Hello>
+  </Greeting>,
   document.getElementById("root")
 );
 
