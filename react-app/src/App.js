@@ -7,12 +7,21 @@ class App extends Component {
     super(props);
     this.state = {
       tasks: [
-        { title: 'Todo一つ目', id: 0 },
-        { title: 'Todo二つ目', id: 1 },
+        {
+          title: 'デフォルトTODO',
+          id: 0,
+        },
       ],
       uniqueId: 1,
     };
     this.addTodo = this.addTodo.bind(this);
+    this.resetTodo = this.resetTodo(this);
+  }
+
+  resetTodo() {
+    this.setState({
+      tasks: [],
+    });
   }
 
   addTodo(title) {
@@ -36,6 +45,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>TODO APP</h1>
+        <button onClick={this.resetTodo}>リセット</button>
         <TodoInput addTodo={this.addTodo} />
         <TodoList tasks={this.state.tasks} />
       </div>
