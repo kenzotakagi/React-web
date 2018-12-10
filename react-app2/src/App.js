@@ -7,9 +7,9 @@ class App extends Component {
     super(props);
     this.state = {
       tasks: [
-        { title: "Todo1" },
-        { title: "Todo2" },
+        { title: "Todo1", id: 0 },
       ],
+      uniqueId: 1,
     };
     this.addTodo = this.addTodo.bind(this);
     this.resetTodo = this.resetTodo.bind(this);
@@ -20,11 +20,20 @@ class App extends Component {
   }
 
   addTodo(title) {
-    const { tasks } = this.state;
+    const { 
+      tasks,
+      uniqueId
+     }  = this.state;
 
-    tasks.push({ title });
+    tasks.push({
+      title,
+      id: uniqueId,
+    });
 
-    this.setState({ tasks });
+    this.setState({
+      tasks,
+      uniqueId: uniqueId + 1,
+    });
   }
 
   render() {
