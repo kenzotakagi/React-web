@@ -7,35 +7,32 @@ class App extends Component {
     super(props);
     this.state = {
       tasks: [
-        { title: "Todo1", id: 0 },
-        { title: "Todo2", id: 1 },
+        { title: "Todo1" },
+        { title: "Todo2" },
       ],
-      uniqueID: 1,
     };
+    this.addTodo = this.addTodo.bind(this);
+    this.resetTodo = this.resetTodo.bind(this);
+  }
+
+  resetTodo() {
+    this.setState({tasks: []});
   }
 
   addTodo(title) {
-    const {
-      tasks,
-      uniqueID
-    } = this.state;
+    const { tasks } = this.state;
 
-    tasks.push({
-      title,
-      id: uniqueID,
-    });
+    tasks.push({ title });
 
-    this.setState({
-      tasks,
-      uniqueID: uniqueID + 1,
-    });
+    this.setState({ tasks });
   }
 
   render() {
     return (
       <div>
         <h1>TODO App</h1>
-        <TodoInput />
+        <button onClick={this.resetTodo}>reset</button>
+        <TodoInput addTodo={this.addTodo} />
         <TodoList tasks={this.state.tasks} />
       </div>
     );
