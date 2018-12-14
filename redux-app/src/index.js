@@ -14,5 +14,4 @@ function renderApp(store) {
 }
 
 store.subscribe(() => renderApp(store));
-
 renderApp(store);
