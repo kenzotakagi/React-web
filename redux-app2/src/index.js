@@ -24,3 +24,6 @@ const addTask = (task) => ({
     task
   }
 })
+
+store.dispatch(addTask("storeを学ぶ"))
+console.log(store.getState())
